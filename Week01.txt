@@ -1,0 +1,19 @@
+A
+1. Khi đó (90 <= grade) thuộc 1 loại bool và isA sẽ nhận giá trị là true vì (90 <= grade) luôn nhỏ hơn 100.
+Sửa bool isA = (90 <= grade && grade <= 100);
+2. x = 0 vì 3/5 là 1 kiểu int nên sẽ bằng 0 ép sang kiểu double cũng sẽ là 0
+3. Vì kiểu dữ liệu long và int chỉ giới hạn từ -2,147,483,648 to 2,147,483,647 hay -2^16 đến 2^16 - 1
+4. Giá trị sẽ là false vì 2 là kiểu int mà sqrt là kiểu double nên sẽ không bằng nhau.
+5. Sẽ bị cảnh báo lỗi division by zero [-Wdiv-by-zero].
+6. error: invalid operands of types 'int' and 'const char [6]' to binary 'operator*' 
+   1.3023e-311, 0;
+7. Output: 0
+		   0.75
+		   0.75
+		   0.75
+8. Sẽ bị conflicting declaration
+9. Chỉ tới biến trong khối lệnh
+10. Chỉ tới biến ngoài khối lệnh
+11. 5/9 = 0 nên C = 0;
+12. Sẽ luôn ra output Here vì lệnh if else không làm gì cả
+		   		

@@ -2,12 +2,11 @@
 
 using namespace std;
 
-long long sumplus (vector <int> a) {
+long long sumplus (vector <int> a, int s) {
     long long sum = 0;
     for (int i = 0; i < a.size(); i++) {
-        for (int j = i + 1; j < a.size(); j++) {
-            sum += a[i] * a[j];
-        }
+        s -= a[i];
+        sum += a[i] * s;
     }
     return sum;
 }
@@ -15,7 +14,7 @@ long long sumplus (vector <int> a) {
 int main() {
     vector <int> sres;
     string s;
-    long long cnt1 = 0, cnt2 = 0;
+    long long cnt1 = 0, cnt2 = 0, sum = 0;
     cin >> s;
     long long slen = s.length();
     long long res = slen * (slen - 1) / 2;
@@ -31,6 +30,7 @@ int main() {
                     if (cnt2 != 0) {
                         res += 1;
                         sres.push_back(cnt2);
+                        sum += cnt2;
                     }
                 cnt2 = 0;
             }
@@ -38,8 +38,9 @@ int main() {
                 sres.push_back(cnt2);
                 res = res - cnt2 * (slen - 1 - cnt2) - (cnt2 * (cnt2 + 1) / 2);
                 res += 1;
+                sum += cnt2;
             }
         }
-    cout << res - cnt1 + sumplus(sres) << " ";
+    cout << res - cnt1 + sumplus(sres, sum);
     return 0;
 }
